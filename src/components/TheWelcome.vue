@@ -6,7 +6,6 @@
         class="bi bi-plus-square cursor-pointer"></i>
     </h3>
     <div>
-      <!-- Статичная строка заголовков -->
       <div class="row fw-semibold text-muted pb-2 mb-2">
         <div class="col-3">
           Метки
