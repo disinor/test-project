@@ -4,7 +4,7 @@ export interface AccountType {
 }
 
 export interface AccountItem {
-  mark: string[];
+  mark: {text: string}[];
   accountType: AccountType | undefined;
   login: string;
   password: string | null;

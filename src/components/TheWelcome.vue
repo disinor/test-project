@@ -143,11 +143,16 @@ function updateStore (needCheckValidation: boolean, obj: AccountItemValidator | 
     })
   }
 }
-function getMarks (arr: string[]) {
-  return arr.join(';')
+function getMarks (arr: {text: string}[]) {
+  const values = Object.values(arr)
+  return values.map(el => el.text).join(';')
 }
 function setMarks (str: string, item: AccountItem, obj: AccountItemValidator) {
-  item.mark = str.split(';')
+  item.mark = str.split(';').map(str => {
+    return {
+      text: str
+    }
+  })
   updateStore(true, obj)
 }
 </script>
