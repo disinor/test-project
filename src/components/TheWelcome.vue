@@ -94,7 +94,13 @@ const rules = computed(() => ({
   items: {
     $each: helpers.forEach({
       mark: {
-        maxLength: maxLength(50)
+        maxLength: helpers.withParams({ type: 'maxLength' },
+          (_, val) => {
+            const values = Object.values(val.mark)
+            const str = values.map(el => el.text).join(';')
+            return str.length < 50
+          }
+        )
       },
       login: {
         maxLength: maxLength(100),
